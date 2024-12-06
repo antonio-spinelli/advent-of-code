@@ -30,6 +30,10 @@ const calculateOperation = (operation: string): number => {
   return a * b;
 }
 
+const getTotalOperations = (operations: string[]): number => {
+  return operations.reduce((acc, op) => acc + calculateOperation(op), 0);
+}
+
 @Component({
   selector: 'app-day-3',
   template: `
@@ -43,7 +47,7 @@ const calculateOperation = (operation: string): number => {
 export default class Day3Page {
   readonly dataInput = signal<string>(EXAMPLE_DATA);
   private readonly operations = computed(() => getOperations(this.dataInput()));
-  readonly total = computed(() => this.operations().reduce((acc, op) => acc + calculateOperation(op), 0));
+  readonly total = computed(() => getTotalOperations(this.operations()));
   private readonly operationsWithConditionalStatements = computed(() => getOperationsWithConditionalStatements(this.dataInput()));
-  readonly totalConditionalStatements = computed(() => this.operationsWithConditionalStatements().reduce((acc, op) => acc + calculateOperation(op), 0));
+  readonly totalConditionalStatements = computed(() => getTotalOperations(this.operationsWithConditionalStatements()));
 }
