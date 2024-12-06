@@ -42,7 +42,6 @@ const calculateOperation = (operation: string): number => {
 })
 export default class Day3Page {
   readonly dataInput = signal<string>(EXAMPLE_DATA);
-  readonly isPart2 = signal<boolean>(false);
   private readonly operations = computed(() => getOperations(this.dataInput()));
   readonly total = computed(() => this.operations().reduce((acc, op) => acc + calculateOperation(op), 0));
   private readonly operationsWithConditionalStatements = computed(() => getOperationsWithConditionalStatements(this.dataInput()));
