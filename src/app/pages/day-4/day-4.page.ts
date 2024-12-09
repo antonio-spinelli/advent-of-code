@@ -112,7 +112,7 @@ const getWordsXShape = (rows: string[][]): string[] => {
   `,
   imports: [FormsModule]
 })
-export default class Day3Page {
+export default class Day4Page {
   readonly dataInput = signal<string>(EXAMPLE_DATA);
   private readonly rows = computed(() => this.dataInput().split('\n').map(row => row.split('')));
   private readonly words = computed(() => getWords(this.rows()));

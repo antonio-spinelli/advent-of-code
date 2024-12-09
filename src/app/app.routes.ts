@@ -17,5 +17,9 @@ export const routes: Routes = [
     path: 'day-4',
     loadComponent: () => import('./pages/day-4/day-4.page'),
   },
+  {
+    path: 'day-5',
+    loadComponent: () => import('./pages/day-5/day-5.page'),
+  },
   { path: '**', redirectTo: 'day-1', pathMatch: 'full' },
 ];
