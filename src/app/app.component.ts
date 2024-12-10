@@ -13,6 +13,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
         <li><a routerLink="/day-3">Day 3</a></li>
         <li><a routerLink="/day-4">Day 4</a></li>
         <li><a routerLink="/day-5">Day 5</a></li>
+        <li><a routerLink="/day-6">Day 6</a></li>
       </ul>
     </nav>
     <router-outlet></router-outlet>
